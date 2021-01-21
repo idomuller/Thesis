@@ -47,7 +47,7 @@ end
 Dis = zeros(size(data,1), size(data,1));
 d_size = size(data,1);
 for i = 1 : d_size
-    for j = 1 : d_size
+    for j = 1 :size(data,1)
         
          Dis(i,j) = [data(i,:) - data(j,:)] * [inv_c(:,:,j)+inv_c(:,:,i)]*0.5 * [data(i,:) - data(j,:)]';
 
@@ -61,5 +61,5 @@ alpha = 1;
 [U, d_A, v_A] = GetDiffuisionMap (Dis, ep_factor, ep, alpha);
 
 figure; 
-scatter(d_A(2,2)*v_A(:,2), d_A(3,3)*v_A(:,3), 14,[1:d_size],'filled');
+scatter(d_A(2,2)*v_A(:,2), d_A(3,3)*v_A(:,3), 10,[1:58],'filled');
 
