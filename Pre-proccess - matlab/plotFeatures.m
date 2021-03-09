@@ -133,12 +133,7 @@ defaultPath='C:\Users\ido\Google Drive\Thesis\Data\Processed Data\';
 % end
 % set( handles.pathBrowser, 'String', [path file]);
 
-filesPath= get(handles.pathBrowser, 'String');
-if ~strcmp(filesPath(end),'\')
-    filesPath = [filesPath '\'];
-    set(handles.pathBrowser, 'String', filesPath);
-end
-allFilesT = struct2cell(dir(filesPath))';
+allFilesT = struct2cell(dir(get(handles.pathBrowser, 'String')))';
 isXLS = cellfun(@(x) contains(x, '.xlsx'), allFilesT(:,1));
 allFiles = allFilesT(isXLS,1);
 set(handles.fileList, 'string',allFiles );
@@ -281,7 +276,7 @@ function plotBtn_Callback(hObject, eventdata, handles)
 global featureToPlot
 featureToPlot=struct;
 allFilse = get(handles.fileList, 'String');
-filePath = [get( handles.pathBrowser, 'String'), allFilse{get(handles.fileList, 'value')}];
+filePath = [get( handles.pathBrowser, 'String'),'\', allFilse{get(handles.fileList, 'value')}];
 featureTable = readtable(filePath);
 timeColIdx = find(strcmp(featureTable.Properties.VariableNames, 'Time'), 1);
 
@@ -306,18 +301,18 @@ if any(contains(tempTimeChar,':'))
 else
     featureTable.Time = cellfun(@(x) str2num(x), tempTimeChar);
     times = [];
-    baseRowIdx = find(cellfun(@(x) contains(lower(x),'_b'), featureTable.Date_Time));
+    baseRowIdx = find(cellfun(@(x) contains(lower(x),'_b_'), featureTable.Date_Time));
     baseRows = sortrows( featureTable(baseRowIdx, :),timeColIdx);
     times = [times; baseRows.Time];
     
-    gRoewsIdx = find(cellfun(@(x) contains(lower(x),'_g'), featureTable.Date_Time));
+    gRoewsIdx = find(cellfun(@(x) contains(lower(x),'_g_'), featureTable.Date_Time));
     gravitationRows = sortrows( featureTable(gRoewsIdx, :),timeColIdx);
-    times = [times; gravitationRows.Time];
+    times = [times; gravitationRows.Time+times(end)+10];
     featureToPlot.RecoveryInd = size(times,1);
     
-    rRoewsIdx = find(cellfun(@(x) contains(lower(x),'_r'), featureTable.Date_Time));
+    rRoewsIdx = find(cellfun(@(x) contains(lower(x),'_re_'), featureTable.Date_Time));
     recoveryRows = sortrows( featureTable(rRoewsIdx, :),timeColIdx);
-    times = [times; recoveryRows.Time+times(end)];
+    times = [times; recoveryRows.Time+times(end)+10];
 
     featureToPlot.sortedFeatureTable = [baseRows; gravitationRows; recoveryRows];
     timeChar = num2str(times);
@@ -511,7 +506,7 @@ end
 axes(handles.secondaryPlot);
 hold on
 xticks(dt(tixc));
-xticklabels(featureToPlot.timeChar(tixc,:));
+xticklabels(featureToPlot.timeChar(tixc));
 xtickangle(45);
 
 if get(handles.yLim2FigTgl, 'Value')
@@ -536,8 +531,8 @@ hold off
 
 axes(handles.mainPlot);
 hold on
-xticks(dt(tixc));
-xticklabels(featureToPlot.timeChar(tixc,:));
+xticks([]);%dt(tixc));
+xticklabels(featureToPlot.timeChar(tixc));
 xtickangle(45);
 if get(handles.yLim2FigTgl, 'value')
     t_min=[];

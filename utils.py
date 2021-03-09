@@ -5,12 +5,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.patheffects as PathEffects
 
-def GetGravityData(allFeatures, normlizeFlag=False):
+
+def GetGravityData(allFeatures, normlizeFlag=False, hand=''):
     folder = r'C:\Projects\Thesis\Feature-Analysis- matlab\Resize Feature\\'
 
     files = os.listdir(folder)
-    files_xls = [f for f in files if f[-10:] == 'right.xlsx']
-    #files_xls = [f for f in files if f[-5:] == '.xlsx']
+    if not hand or hand == 'both':
+        files_xls = [f for f in files if f[-5:] == '.xlsx']
+    elif hand == 'right':
+        files_xls = [f for f in files if f[-10:] == 'right.xlsx']
+    elif hand == 'left':
+        files_xls = [f for f in files if f[-9:] == 'left.xlsx']
 
     grouped_feature = pd.DataFrame()
     names = []
@@ -22,15 +27,14 @@ def GetGravityData(allFeatures, normlizeFlag=False):
         currentFeatures = pd.read_excel(currentFile)
         if normlizeFlag:  # Use the ratio
             relevant_cols = (currentFeatures.loc[0:18, allFeatures] - currentFeatures.loc[0, allFeatures]) / \
-                           currentFeatures.loc[0, allFeatures]
+                            currentFeatures.loc[0, allFeatures]
             data[ind, :] = relevant_cols.mean(axis=1)
         else:  # Use the actual values
             # relevantCols = currentFeatures.filter(regex='Intence')
             relevant_cols = currentFeatures.loc[0:18, allFeatures]
-            data[ind, :] = relevant_cols.mean((currentFeatures.loc[0:18, allFeatures] - currentFeatures.loc[0, allFeatures]) /
-                                              currentFeatures.loc[0, allFeatures], axis=1)
-
-
+            data[ind, :] = relevant_cols.mean(
+                (currentFeatures.loc[0:18, allFeatures] - currentFeatures.loc[0, allFeatures]) /
+                currentFeatures.loc[0, allFeatures], axis=1)
 
         transformData = relevant_cols.values.ravel('F')
         transformDataFrame = pd.DataFrame(transformData).T
@@ -49,7 +53,7 @@ def GetStudyData(allFeatures, normlizeFlag=False):
     folder = r'C:\Projects\Thesis\Feature-Analysis- matlab\Resize Feature\\'
 
     files = os.listdir(folder)
-    #files_xls = [f for f in files if f[-10:] == 'right.xlsx']
+    # files_xls = [f for f in files if f[-10:] == 'right.xlsx']
     files_xls = [f for f in files if f[-5:] == '.xlsx']
 
     groupedFeature = pd.DataFrame()
@@ -62,7 +66,7 @@ def GetStudyData(allFeatures, normlizeFlag=False):
         currentFeatures = pd.read_excel(currentFile)
         if normlizeFlag:  # Use the ratio
             relevant_cols = (currentFeatures.loc[0:, allFeatures] - currentFeatures.loc[0, allFeatures]) / \
-                           currentFeatures.loc[0, allFeatures]
+                            currentFeatures.loc[0, allFeatures]
         else:  # Use the actual values
             # relevantCols = currentFeatures.filter(regex='Intence')
             relevant_cols = currentFeatures.loc[0:, allFeatures]
@@ -80,19 +84,27 @@ def GetStudyData(allFeatures, normlizeFlag=False):
 
     return groupedFeature, names, subject_id
 
+
 # Utility function to visualize the outputs of PCA and t-SNE
 
-def GetHandFingersDataRelateToCenter (normlizeFlag=False):
+def get_hand_fingers_data_relate_to_center(normalize_flag=False, hand=''):
+    grouped_feature = pd.DataFrame()
     folder = r'C:\Projects\Thesis\Feature-Analysis- matlab\Resize Feature\\'
 
     files = os.listdir(folder)
-    files_xls = [f for f in files if f[-10:] == 'right.xlsx']
-
+    if not hand or hand == 'both':
+        files_xls = [f for f in files if f[-5:] == '.xlsx']
+    elif hand == 'right':
+        files_xls = [f for f in files if f[-10:] == 'right.xlsx']
+    elif hand == 'left':
+        files_xls = [f for f in files if f[-9:] == 'left.xlsx']
+    subject_id = []
     groupedFeature = pd.DataFrame()
     names = []
     allingers = ['Thumbs_dist_Intence', 'Thumbs_proxy_Intence', 'Index_dist_Intence', 'Index_proxy_Intence',
-                   'Middle_dist_Intence', 'Middle_proxy_Intence', 'Ring_dist_Intence', 'Ring_proxy_Intence',
-                   'Pinky_dist_Intence', 'Pinky_proxy_Intence']
+                 'Middle_dist_Intence', 'Middle_proxy_Intence', 'Ring_dist_Intence', 'Ring_proxy_Intence',
+                 'Pinky_dist_Intence', 'Pinky_proxy_Intence']
+
     for file in files_xls:
         print(file)
         currentFile = folder + file
@@ -101,21 +113,28 @@ def GetHandFingersDataRelateToCenter (normlizeFlag=False):
         # relevantCols = currentFeatures.filter(regex='Intence')
         relevantFingersCols = np.transpose(currentFeatures.loc[:, allingers].values)
         relevantPalmCols = currentFeatures.loc[:, 'Palm_Center_Intence'].values
-        substructFingers = relevantFingersCols - relevantPalmCols
-        substructFingers = pd.DataFrame(substructFingers)
-        if normlizeFlag:
-            relevantCols=np.transpose((np.transpose(substructFingers[:,:]) -substructFingers[:,0])/substructFingers[:,0])
+        subtract_fingers = relevantFingersCols - relevantPalmCols
+        #subtract_fingers = pd.DataFrame(subtract_fingers)
+        if normalize_flag:
+            relevant_cols = np.transpose(
+                (np.transpose(subtract_fingers[:, :]) - subtract_fingers[:, 0]) / subtract_fingers[:, 0])
 
         else:
-            relevantCols=substructFingers
+            relevant_cols = subtract_fingers
 
-        relevantColsRow = relevantCols.values.ravel('C')
-        indName = file[:-5]
-        transformDataFrame = relevantCols.rename(index={0: indName})
-        groupedFeature = groupedFeature.append(transformDataFrame)
-        names.append(indName[:-6])
+        relevant_cols_pd = pd.DataFrame(relevant_cols[:, 0:18])
+        transformData = relevant_cols_pd.values.ravel('C')
+        transformDataFrame = pd.DataFrame(transformData).T
+        ind_name = file[:-5]
+        transformDataFrame = transformDataFrame.rename(index={0: ind_name})
+        grouped_feature = grouped_feature.append(transformDataFrame)
+        names.append(ind_name.split('_')[0] + '_' + ind_name.split('_')[1] + '_' + ind_name.split('_')[2][0])
+        subject_id.append(ind_name.split('_')[0] + '_' + ind_name.split('_')[1] + '_')
+    subject_id = np.unique(subject_id)
 
-    return groupedFeature, names
+    return grouped_feature, names, subject_id
+
+
 def fashion_scatter(x, colors):
     # choose a color palette with seaborn.
     num_classes = len(np.unique(colors))
@@ -134,7 +153,6 @@ def fashion_scatter(x, colors):
     txts = []
 
     for i in range(num_classes):
-
         # Position of each label at median of data points.
 
         xtext, ytext = np.median(x[colors == i, :], axis=0)
@@ -146,7 +164,8 @@ def fashion_scatter(x, colors):
 
     return f, ax, sc, txts
 
-def foundTwoHils (array):
+
+def foundTwoHils(array):
     arrayDiff = -np.diff(np.r_[array[1], array[1:]])
     tempMax = []
     maxInd = []

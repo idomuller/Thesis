@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d84e28ba-b601-4f24-9916-ba498c56a74e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/OneDirectionLaplacianPyramid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Thesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Thesis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplyDecisionTreeClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyDecisionTreeClassifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diabetes_entropy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diabetes_gini.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entropy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entropy_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/entropy_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entropy_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/entropy_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gini.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplyPCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ApplyPCA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apply_tSNE.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apply_tSNE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Feature-Analysis- matlab/Diffusion_maps- 2/RunDiffusionMapOnHands.asv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pre-proccess - matlab/RunExtractHandFeatures.fig" beforeDir="false" afterPath="$PROJECT_DIR$/Pre-proccess - matlab/RunExtractHandFeatures.fig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pre-proccess - matlab/RunExtractHandFeatures.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pre-proccess - matlab/RunExtractHandFeatures.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pre-proccess - matlab/RunRegistration.fig" beforeDir="false" afterPath="$PROJECT_DIR$/Pre-proccess - matlab/RunRegistration.fig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pre-proccess - matlab/plotFeatures.fig" beforeDir="false" afterPath="$PROJECT_DIR$/Pre-proccess - matlab/plotFeatures.fig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pre-proccess - matlab/plotFeatures.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pre-proccess - matlab/plotFeatures.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mdi-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pyanalyzer" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -44,7 +51,7 @@
       <recent name="C:\Projects\Thesis" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ApplyDecisionTreeClassifier">
+  <component name="RunManager" selected="Python.Apply_tSNE">
     <configuration name="ApplyDecisionTreeClassifier" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Thesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,7 +80,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Projects\Thesis\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Projects\Thesis venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -108,7 +115,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="LearnML" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Apply_tSNE" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Thesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -120,7 +127,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LearnML.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Apply_tSNE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="OneDirectionLaplacianPyramid" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Thesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Project\python_enviroments\Thesis\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OneDirectionLaplacianPyramid.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,42 +199,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="playScript" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Thesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Project\python_enviroments\Thesis\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/playScript.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Python.Thesis" />
       <item itemvalue="Python.ApplyDecisionTreeClassifier" />
       <item itemvalue="Python.ApplyDiffusionMap" />
       <item itemvalue="Python.ApplyPCA" />
-      <item itemvalue="Python.LearnML" />
-      <item itemvalue="Python.Thesis" />
-      <item itemvalue="Python.playScript" />
+      <item itemvalue="Python.OneDirectionLaplacianPyramid" />
+      <item itemvalue="Python.Apply_tSNE" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ApplyDecisionTreeClassifier" />
-        <item itemvalue="Python.LearnML" />
+        <item itemvalue="Python.Apply_tSNE" />
         <item itemvalue="Python.ApplyPCA" />
+        <item itemvalue="Python.OneDirectionLaplacianPyramid" />
         <item itemvalue="Python.ApplyDiffusionMap" />
-        <item itemvalue="Python.playScript" />
+        <item itemvalue="Python.ApplyDecisionTreeClassifier" />
       </list>
     </recent_temporary>
   </component>
@@ -281,12 +288,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>153</line>
+          <line>172</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>162</line>
+          <line>181</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -310,34 +317,9 @@
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Apply_tSNE.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>126</line>
+          <line>145</line>
           <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Apply_tSNE.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
-          <line>202</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ApplyMDLP.py</url>
@@ -361,17 +343,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="264" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
-          <line>154</line>
-          <option name="timeStamp" value="275" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
-          <line>137</line>
+          <line>141</line>
           <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -381,27 +353,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>69</line>
+          <line>73</line>
           <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="288" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>28</line>
+          <line>33</line>
           <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="291" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>29</line>
+          <line>34</line>
           <option name="timeStamp" value="292" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -411,8 +373,73 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ApplyDecisionTreeClassifier.py</url>
-          <line>123</line>
+          <line>151</line>
           <option name="timeStamp" value="319" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyDecisionTreeClassifier.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="328" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyDecisionTreeClassifier.py</url>
+          <line>170</line>
+          <option name="timeStamp" value="331" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyDecisionTreeClassifier.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="333" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyDecisionTreeClassifier.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="334" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="341" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
+          <line>289</line>
+          <option name="timeStamp" value="342" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyDiffusionMap.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="346" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/OneDirectionLaplacianPyramid.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="355" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ApplyPCA.py</url>
+          <line>275</line>
+          <option name="timeStamp" value="361" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Apply_tSNE.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="368" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Apply_tSNE.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="369" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Apply_tSNE.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="371" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

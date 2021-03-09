@@ -22,7 +22,7 @@ function varargout = RunExtractHandFeatures(varargin)
 
 % Edit the above text to modify the response to help RunExtractHandFeatures
 
-% Last Modified by GUIDE v2.5 29-Sep-2020 20:38:25
+% Last Modified by GUIDE v2.5 01-Mar-2021 12:56:33
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -115,7 +115,7 @@ function baseLineBrowserBtn_Callback(hObject, eventdata, handles)
 
 global imageProccess
 
-[file,path] = uigetfile('C:\Users\ido\Google Drive\Thesis\Data\CSV- Copy\*.csv','Select an image file');%'C:\Users\ido\Google Drive\Thesis\Data\CSV-Recover\*.csv','Select an image file');
+[file,path] = uigetfile('C:\Users\ido.DM\Google Drive\Thesis\Data\JPG-Recover\*.jpg','Select an image file');%'C:\Users\ido\Google Drive\Thesis\Data\CSV-Recover\*.csv','Select an image file');
 set( handles.baseLinePath, 'String', [path file]);
 try
     if contains(file, '.csv') || contains(file, '.xlsx')
@@ -925,4 +925,3 @@ set(gca,'visible','off');
 plot(imageProccess.palm.mainBox(1,:), imageProccess.palm.mainBox(2,:), 'r-', 'LineWidth', 1, 'Parent', handles.PalmAxes);
 plot(imageProccess.palm.elipse(:,1), imageProccess.palm.elipse(:,2), 'r-', 'LineWidth', 1);
 hold(handles.PalmAxes, 'off');
-
